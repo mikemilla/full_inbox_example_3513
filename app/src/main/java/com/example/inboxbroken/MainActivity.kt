@@ -36,8 +36,12 @@ class MainActivity : AppCompatActivity() {
 
         lifecycleScope.launch {
 
+            // You should call this where you normally manage your users state
+            // For this example, we are calling it now to ensure we have a fresh user
             Courier.shared.signOut()
 
+            // Sign the user in
+            // Again, this should be called where you manage your user's state
             Courier.shared.signIn(
                 userId = "example_user",
                 accessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzY29wZSI6InVzZXJfaWQ6ZXhhbXBsZV91c2VyIHdyaXRlOnVzZXItdG9rZW5zIGluYm94OnJlYWQ6bWVzc2FnZXMgaW5ib3g6d3JpdGU6ZXZlbnRzIHJlYWQ6cHJlZmVyZW5jZXMgd3JpdGU6cHJlZmVyZW5jZXMgcmVhZDpicmFuZHMiLCJ0ZW5hbnRfc2NvcGUiOiJwdWJsaXNoZWQvcHJvZHVjdGlvbiIsInRlbmFudF9pZCI6IjZhNTFiZjhjLWFkMmUtNDJiZi1iZTZhLTgzODViNWQ0YTBmNSIsImlhdCI6MTczMDMxODYwNiwiZXhwIjoxNzM4OTU4NjA2LCJqdGkiOiJkMDBlYzIxMS0xZDI4LTQ3YmItOGE2Ni0wZGMzNDBhNTU2OTQifQ.Za9-TOEanVSyJ3HhqM1b0IVFDlf1t4_-a6wOjWHXzow"
